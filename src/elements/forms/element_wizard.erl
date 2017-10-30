@@ -41,31 +41,31 @@ render_element(Record = #wizard{tag=Tag, next_class=NextClass, back_class=BackCl
 			#panel{class=[wizard_buttons,wf:to_list([TopOrBot,wizard_buttons])],body=[
 				#singlerow{cells=[
 					#tablecell{class=wizard_buttons_back,body=[
-						#button{
+						#link{
 							id=button_id(TopOrBot,back,N),
 							show_if=(not IsFirst),
 							text=Record#wizard.back,
 							postback={back, N, StepIDs},
 							delegate=?MODULE,
-                            class=BackClass
+                            class="btn btn-default btn-xs"
 						}
 					]},
 					#tablecell{class=wizard_buttons_next,body=[
-						#button{
+						#link{
 							id=button_id(TopOrBot,next,N), 
 							show_if=(not IsLast), 
 							text=Record#wizard.next, 
 							postback={next, N, StepIDs}, 
 							delegate=?MODULE,
-                            class=NextClass
+                            class="btn btn-default btn-xs"
 						},
-						#button{
+						#link{
 							id=button_id(TopOrBot,finish,N), 
 							show_if=IsLast, 
 							text=Record#wizard.finish, 
 							postback={finish, Tag}, 
 							delegate=?MODULE,
-                            class=FinishClass
+                            class="btn btn-default btn-xs"
 						} 
 					]}
 				]}

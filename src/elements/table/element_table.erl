@@ -32,7 +32,7 @@ render_element(Record) ->
     wf_tags:emit_tag( table, Content, [
         {id, Record#table.html_id},
         {border,Record#table.border},
-        {class, [table, Record#table.class]},
+        {class, ["", Record#table.class]},
         {title, Record#table.title},
         {style, Record#table.style},
         {data_fields, Record#table.data_fields}
